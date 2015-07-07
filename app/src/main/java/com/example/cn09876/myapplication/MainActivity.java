@@ -22,7 +22,6 @@ public class MainActivity extends SwForm {
     SwTest pp1;
     SwListView lst1;
 
-    //TODO 变量定义的不好看啊
     static
     {
         System.loadLibrary("sw_jni");
