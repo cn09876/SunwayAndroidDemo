@@ -11,8 +11,8 @@ it's easy to use,in this demo,stub some useful classes
 6. custom ScrollView (Both h and v)
 and etc
 
-come with me:
-WeChat:10426013
-QQ:10426013
-FaceBook: http://facebook.com/cn09876
-Twitter: https//twitter.com/cn09876
+#Come with me:
+###WeChat:10426013
+###QQ:10426013
+###FaceBook: [http://facebook.com/cn09876]
+###Twitter: [http://twitter.com/cn09876]
