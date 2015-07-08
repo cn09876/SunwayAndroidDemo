@@ -1,4 +1,4 @@
-package com.example.cn09876.myapplication;
+package com.example.cn09876.myapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

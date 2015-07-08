@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -21,8 +22,9 @@ public class SwTest extends View
 	private int r=0,g=0,b=0;
 	private MyThread thdMain;
 	private InputMethodManager inputMethodManager;
-	
-	class MyThread extends Thread 
+    private  GradientDrawable gd;
+
+    class MyThread extends Thread
 	{
         private boolean mActive = true;
 
@@ -61,7 +63,7 @@ public class SwTest extends View
 
 	private void l(String s)
 	{
-		Log.e(TAG,s);
+		Log.e(TAG, s);
 	}
 	
 	public SwTest(Context context, AttributeSet attrs, int defStyle) 
@@ -96,7 +98,13 @@ public class SwTest extends View
     }
 	private void init()
 	{
-		setFocusable(true);
+        gd= new GradientDrawable();
+        gd.setColor(Color.RED);
+        gd.setCornerRadius(10);
+        gd.setStroke(2, Color.WHITE);
+        gd.setBounds(1,1,80,200);
+
+        setFocusable(true);
         setFocusableInTouchMode(true);
         setOnKeyListener(new OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -126,7 +134,14 @@ public class SwTest extends View
 		this.invalidate();
 	}
 
-	@Override
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        setMeasuredDimension(100,400);
+
+    }
+
+
+    @Override
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
 		thdMain.start();
@@ -151,6 +166,11 @@ public class SwTest extends View
 		c.drawColor(Color.rgb(r, g, b));
 		
 		c.drawText(mText, 10, 30, p);
+
+        c.save();
+        gd.draw(c);
+        c.restore();
+
 		super.draw(c);
 	}
 

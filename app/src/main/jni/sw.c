@@ -10,7 +10,7 @@ static const char *TAG="sw_debug";
 #define LOGE(fmt, args...) __android_log_print(ANDROID_LOG_ERROR, TAG, fmt, ##args)
 
 
-JNIEXPORT jstring JNICALL Java_com_example_cn09876_myapplication_MainActivity_get_1pwd(JNIEnv *env, jobject obj, jint idx)
+JNIEXPORT jstring JNICALL Java_com_example_cn09876_myapp_MainActivity_get_1pwd(JNIEnv *env, jobject obj, jint idx)
 {
 	LOGE("hello i am jni123哈哈");
 	return (*env)->NewStringUTF(env, "48156327");

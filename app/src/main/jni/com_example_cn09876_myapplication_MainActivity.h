@@ -12,7 +12,7 @@ extern "C" {
  * Method:    get_pwd
  * Signature: (I)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_example_cn09876_myapplication_MainActivity_get_1pwd
+JNIEXPORT jstring JNICALL Java_com_example_cn09876_myapp_MainActivity_get_1pwd
   (JNIEnv *, jobject, jint );
 
 #ifdef __cplusplus
